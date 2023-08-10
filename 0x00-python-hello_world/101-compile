@@ -1,0 +1,31 @@
+#!/bin/bash
+
+import os
+import sys
+
+def compile_python_script():
+    try:
+        script_file = os.environ.get("PYFILE")
+        if not script_file:
+            print("Error: Environment variable $PYFILE is not set.")
+            sys.exit(1)
+
+        output_file = script_file + "c"
+        with open(script_file, "r") as file:
+            script_code = file.read()
+
+        compiled_code = compile(script_code, script_file, 'exec')
+
+        with open(output_file, "wb") as compiled_file:
+            compiled_file.write(compiled_code.co_code)
+        
+        print("Compilation successful. Output file:", output_file)
+    except FileNotFoundError:
+        print("Error: The specified script file was not found.")
+    except Exception as e:
+        print("An error occurred:", e)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    compile_python_script()
+
