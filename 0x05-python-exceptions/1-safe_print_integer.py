@@ -19,7 +19,8 @@ You are not allowed to use type()
 
 def safe_print_integer(value):
     try:
-        print("{:d}".format(value))
+        m = "{:d}".format(value)
+        print(m)
         return True
     except ValueError:
         return False
