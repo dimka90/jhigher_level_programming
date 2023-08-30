@@ -3,10 +3,11 @@
 
 
 class Square:
+    """
+    a class that defines a square based on task 3
+    3-square.py task
+    """
     def __init__(self, size=0):
-        """ a class that defines a square based on
-        task 3-square.py task
-        """
         self.__size = size
 
     def area(self):
@@ -15,12 +16,14 @@ class Square:
         area
         """
         return self.__size ** 2
+
     @property
     def size(self):
         """
         a size getter that retrive size
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """
