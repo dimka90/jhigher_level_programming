@@ -7,9 +7,7 @@ an empty class square that defines a square
 
 
 class Square:
+    """
+    an empty class square that defines a square
+    """
     pass
-
-
-"""
-an empty class that defines a square
-"""
