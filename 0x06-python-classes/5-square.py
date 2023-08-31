@@ -43,7 +43,7 @@ class Square:
          if size is = 0 prints an empty line
         """
         if self.size == 0:
-            print(" ")
+            print("")
         else:
             for _ in range(self.size):
                 print("#" * self.size)
